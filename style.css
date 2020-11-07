@@ -1,89 +1,224 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  /* Light Theme */
+  --color-light-text: #0f0f0f;
+  --background-light-card: #eeeeee;
+  --background-light-focus-form: #e4e4e4;
+  /* Dark Theme */
+  --background-blue: #0068f0;
+  --color-text: #fff;
+  --background-card: #1c1e21;
+  --background-focus-form: #25272a;
+}
 
 body {
-    background-color: #535fe6;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300
+  background-color: var(--background-blue);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .height {
-    height: 100vh
+  height: 100vh;
 }
+
+/*Light Style*/
+.card.light {
+  background-color: var(--background-light-card);
+  color: var(--color-light-text);
+}
+
+.form-control.light {
+  background-color: var(--background-light-card);
+}
+
+.form-control.light:focus {
+  background-color: var(--background-light-focus-form);
+  color: var(--color-light-text);
+  border-color: var(--background-blue);
+}
+
+.social.light {
+  border: 1px solid var(--color-light-text);
+}
+
 /*/ hidden form /*/
-.form-hidden{
-    display: none;
+.form-hidden {
+  display: none;
 }
 
 .card {
-    border: none;
-    padding: 20px;
-    background-color: #1c1e21;
-    color: #fff
+  border: none;
+  padding: 20px;
+  background-color: var(--background-card);
+  color: var(--color-text);
 }
 
 .circle {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #5855e7;
-    color: #fff;
-    font-size: 10px;
-    border-radius: 50%
+  height: 20px;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background-blue);
+  color: var(--color-text);
+  font-size: 10px;
+  border-radius: 50%;
 }
 
 .form-input {
-    position: relative;
-    margin-bottom: 10px;
-    margin-top: 10px
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .form-input i {
-    position: absolute;
-    font-size: 18px;
-    top: 15px;
-    left: 10px
+  position: absolute;
+  font-size: 18px;
+  top: 15px;
+  left: 10px;
 }
 
 .form-control {
-    height: 50px;
-    background-color: #1c1e21;
-    text-indent: 24px;
-    font-size: 15px
+  height: 50px;
+  background-color: var(--background-card);
+  text-indent: 24px;
+  font-size: 15px;
 }
 
 .form-control:focus {
-    background-color: #25272a;
-    box-shadow: none;
-    color: #fff;
-    border-color: #4f63e7
+  background-color: var(--background-focus-form);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: var(--color-text);
+  border-color: var(--background-blue);
 }
 
 .form-check-label {
-    margin-top: 2px;
-    font-size: 14px
+  margin-top: 2px;
+  font-size: 14px;
 }
 
 .signup {
-    height: 50px;
-    font-size: 14px;
-    width: 100%;
+  height: 50px;
+  font-size: 14px;
+  width: 100%;
 }
 
 .social {
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    margin-right: 10px;
-    cursor: pointer
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--color-text);
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .social:hover {
-    background-color: #0d6efd;
-    border-color: #0d6efd
+  background-color: var(--background-blue);
+  border-color: var(--background-blue);
 }
+
+/* ----------------------------*/
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'] {
+    --active: #275EFE;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #BBC1E1;
+    --border-hover: #275EFE;
+    --background: var(--background-focus-form);
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    -webkit-transition: background .3s, border-color .3s, -webkit-box-shadow .2s;
+    transition: background .3s, border-color .3s, -webkit-box-shadow .2s;
+    transition: background .3s, border-color .3s, box-shadow .2s;
+    transition: background .3s, border-color .3s, box-shadow .2s, -webkit-box-shadow .2s;
+  }
+  input[type='checkbox']:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    -webkit-transition: opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+    transition: opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+  }
+  input[type='checkbox']:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: .3s;
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+  }
+  input[type='checkbox']:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+  input[type='checkbox']:focus {
+    -webkit-box-shadow: 0 0 0 var(--focus);
+            box-shadow: 0 0 0 var(--focus);
+  }
+  input[type='checkbox'] + label {
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  /*****************/
+  input[type='checkbox'].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  input[type='checkbox'].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    -webkit-transform: translateX(var(--x, 0));
+            transform: translateX(var(--x, 0));
+  }
+  input[type='checkbox'].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+  input[type='checkbox'].switch:disabled:not(:checked):after {
+    opacity: .6;
+  }
+}
+
+.swith-mode {
+  margin-right: 3rem;
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

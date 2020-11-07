@@ -16,3 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 signUpForm.classList.remove("form-hidden");
             });    
 })
+
+//Apply Theme - dark and light//
+function applyTheme(){
+    const checkBox = document.querySelector('.switch');
+    const itemLight = document.querySelectorAll('.card, .form-control, .social');
+
+    if (checkBox.checked == true) {
+        itemLight.forEach(e => {
+            e.classList.add('light');
+        })
+    }
+    else {
+        itemLight.forEach(e => {
+            e.classList.remove('light');
+        })
+    } 
+}

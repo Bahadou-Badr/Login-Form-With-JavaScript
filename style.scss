@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+    /* Light Theme */
+    --color-light-text: #0f0f0f;
+    --background-light-card: #eeeeee;
+    --background-light-focus-form: #e4e4e4;
+    
+      
+    
+    /* Dark Theme */
+    --background-blue: #0068f0;
+    --color-text: #fff;
+    --background-card: #1c1e21;
+    --background-focus-form: #25272a;
+    
+}
+
+body {
+
+    background-color: var(--background-blue);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300
+}
+.height {
+  height: 100vh
+}
+/*Light Style*/
+.card.light{
+  background-color: var(--background-light-card);
+  color: var(--color-light-text);
+}
+.form-control.light{
+  background-color: var(--background-light-card);
+}
+
+.form-control.light:focus{
+  background-color: var(--background-light-focus-form);
+  color: var(--color-light-text);
+  border-color: var(--background-blue)
+}
+
+.social.light {
+  border: 1px solid var(--color-light-text);
+
+}
+.circle.light {
+  color: var(--color-light-text);
+}
+
+/*/ hidden form /*/
+.form-hidden{
+    display: none;
+}
+
+.card {
+    border: none;
+    padding: 20px;
+    background-color: var(--background-card);
+    color: var(--color-text);
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-blue);
+    color: var(--color-light-text);
+    font-size: 10px;
+    border-radius: 50%
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+
+.form-input i {
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 10px
+}
+
+.form-control {
+    height: 50px;
+    background-color: var(--background-card);
+    text-indent: 24px;
+    font-size: 15px
+}
+
+
+.form-control:focus {
+    background-color: var(--background-focus-form);
+    box-shadow: none;
+    color: var(--color-text);
+    border-color: var(--background-blue)
+}
+
+.form-check-label {
+    margin-top: 2px;
+    font-size: 14px
+}
+
+.signup {
+    height: 50px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.social {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-text);
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.social:hover {
+    background-color: var(--background-blue);
+    border-color: var(--background-blue);
+}
+/* ----------------------------*/
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox']{
+    --active: #275EFE;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #BBC1E1;
+    --border-hover: #275EFE;
+    --background: var(--background-focus-form);
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background .3s, border-color .3s, box-shadow .2s;
+    &:after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: .3s;
+      --d-t: .6s;
+      --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    }
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+   
+    & + label {
+      font-size: 14px;
+      line-height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+  }
+  /*****************/
+  input[type='checkbox'] {
+    &.switch {
+      width: 38px;
+      border-radius: 11px;
+      &:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--ab, var(--border));
+        transform: translateX(var(--x, 0));
+      }
+      &:checked {
+        --ab: var(--active-inner);
+        --x: 17px;
+      }
+      &:disabled {
+        &:not(:checked) {
+          &:after {
+            opacity: .6;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+.swith-mode {
+  margin-right: 3rem;
+  position: relative;
+}
+
