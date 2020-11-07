@@ -9,6 +9,10 @@ body {
 .height {
     height: 100vh
 }
+/*/ hidden form /*/
+.form-hidden{
+    display: none;
+}
 
 .card {
     border: none;
